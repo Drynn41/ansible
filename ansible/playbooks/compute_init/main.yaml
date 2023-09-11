@@ -9,12 +9,12 @@
         name:
           - httpd
           - mod_ssl
-        ensure: present
+        state: present
 
     - name: start httpd service and enable
       service:
         name: httpd
-        ensure: started
+        state: started
         enabled: true
 
 
