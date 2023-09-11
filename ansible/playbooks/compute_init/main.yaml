@@ -1,0 +1,21 @@
+---
+- name: Initialisation of compute engine
+  host: all
+  gather_facts: true
+  become: true
+  tasks:
+    - name: Install of httpd
+      yum:
+        name:
+          - httpd
+          - mod_ssl
+      ensure: present
+
+    - name: start httpd service and enable
+      service:
+        name: httpd
+        ensure: started
+        enabled: true
+
+
+...
