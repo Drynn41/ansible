@@ -5,7 +5,7 @@
   become: true
   tasks:
     - name: Install of httpd
-      yum:
+      dnf:
         name:
           - httpd
           - mod_ssl
