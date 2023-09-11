@@ -1,6 +1,6 @@
 ---
 - name: Initialisation of compute engine
-  host: all
+  hosts: all
   gather_facts: true
   become: true
   tasks:
