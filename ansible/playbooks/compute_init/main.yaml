@@ -17,5 +17,21 @@
         state: started
         enabled: true
 
+    - name: Create website structure
+      file:
+        path: "{{ item.name }}"
+        state: directory
+        mode: "{{ item.mode }}"
+        owner: "{{ item.owner }}"
+        group: "{{ item.group }}"
+      loop:
+        - { name: "/var/www/html/css", mode: "0755", owner: "root", group: "root"}
 
+    - name: Deploy index.html
+      template:
+        src: "index.html.j2"
+        dest: "/var/www/html/index.html"
+        mode: "0644"
+        owner: "root"
+        group: "root"
 ...
