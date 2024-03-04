@@ -34,4 +34,12 @@
         mode: "0644"
         owner: "root"
         group: "root"
+
+    - name: Deploy styles.css
+      template:
+        src: "styles.css"
+        dest: "/var/www/html/css/styles.css"
+        mode: "0644"
+        owner: "root"
+        group: "root"
 ...
