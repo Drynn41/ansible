@@ -1,21 +1,21 @@
 ---
-- name: Initialisation of compute engine
-  hosts: all
-  gather_facts: true
-  become: true
-  tasks:
-    - name: Install of httpd
-      dnf:
-        name:
-          - httpd
-          - mod_ssl
-        state: present
+  - name: Initialisation of compute engine
+    hosts: all
+    gather_facts: true
+    become: true
+    tasks:
+      - name: Install of httpd
+        dnf:
+          name:
+            - httpd
+            - mod_ssl
+          state: present
 
-    - name: start httpd service and enable
-      service:
-        name: httpd
-        state: started
-        enabled: true
+      - name: start httpd service and enable
+        service:
+          name: httpd
+          state: started
+          enabled: true
 
 
 ...
